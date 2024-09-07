@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+app.use(cors(
+  origin : [""],
+  methods: ["POST", "GET"]
+));
 app.use(express.json());
 
 // connecting monogdb using mongoose library
