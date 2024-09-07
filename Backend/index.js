@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-const corsOptions = {
-    origin: 'https://seat-reservation-six.vercel.app',
-    optionsSuccessStatus: 200 // Some legacy browsers choke on status 204
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://seat-reservation-six.vercel.app', // Your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 app.use(express.json());
 
@@ -107,6 +107,6 @@ app.get('/seats', async (req, res) => {
 });
 
 // initializing server
-const PORT = process.env.PORT || 8000;
+const PORT ="https://seat-reservation-5khq.vercel.app";
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
