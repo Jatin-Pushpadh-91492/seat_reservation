@@ -3,11 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-  origin: 'https://seat-reservation-six.vercel.app', // Your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+app.use(cors);
 
 app.use(express.json());
 
@@ -107,6 +103,6 @@ app.get('/seats', async (req, res) => {
 });
 
 // initializing server
-const PORT ="https://seat-reservation-5khq.vercel.app";
+const PORT ="8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
