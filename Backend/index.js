@@ -102,5 +102,5 @@ app.get('/seats', async (req, res) => {
 });
 
 // initializing server
-const PORT = 8000;
+const PORT = "seat-reservation-5khq.vercel.app";
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
