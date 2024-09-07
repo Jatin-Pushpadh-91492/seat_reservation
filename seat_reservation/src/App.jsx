@@ -51,7 +51,7 @@ function App() {
   //here it is reinitializing the booked seats simply it clears and reset in UI
   const handleReinitialize = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/reinitializeSeats');
+      const response = await axios.post('https://seat-reservation-binp.vercel.app/reinitializeSeats');
       setSeats(prevSeats =>
         prevSeats.map(seat => ({ ...seat, isBooked: false })) // Reset seat states in the UI
       );
