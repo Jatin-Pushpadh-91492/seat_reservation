@@ -3,11 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-app.use(cors(
-  origin: [https://seat-reservation-six.vercel.app],
-  method :["POST","GET"],
-  credentials : true
-));
+app.use(cors({origin : '*'}));
 app.use(express.json());
 
 // connecting monogdb using mongoose library
