@@ -4,7 +4,9 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors(
-  origin: [https://seat-reservation-six.vercel.app]
+  origin: [https://seat-reservation-six.vercel.app],
+  method :["POST","GET"],
+  credentials : true
 ));
 app.use(express.json());
 
