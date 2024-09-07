@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const fetchSeats = async () => {
       try {
-        const response = await axios.get('https://seat-reservation-5khq-2v0rtp8bb-jatin4.vercel.app/seats');
+        const response = await axios.get('http://localhost:8000/seats');
         setSeats(response.data);
       } catch (error) {
         console.error('Error fetching seats:', error);
@@ -27,7 +27,7 @@ function App() {
   //here it is handling the booking of the seats and updating the UI with its result
   const handleBooking = async () => {
     try {
-      const response = await axios.post('https://seat-reservation-5khq-2v0rtp8bb-jatin4.vercel.app/bookSeats', { seatCount: Number(seatCount) });
+      const response = await axios.post('http://localhost:8000/bookSeats', { seatCount: Number(seatCount) });
       const bookedSeats = response.data.seatNumbers;
   
       setSeats(prevSeats =>
@@ -51,7 +51,7 @@ function App() {
   //here it is reinitializing the booked seats simply it clears and reset in UI
   const handleReinitialize = async () => {
     try {
-      const response = await axios.post('https://seat-reservation-5khq-2v0rtp8bb-jatin4.vercel.app/reinitializeSeats');
+      const response = await axios.post('http://localhost:8000/reinitializeSeats');
       setSeats(prevSeats =>
         prevSeats.map(seat => ({ ...seat, isBooked: false })) // Reset seat states in the UI
       );
